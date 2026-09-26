@@ -1,0 +1,22 @@
+# Robots.txt for abinbinoy-about.vercel.app
+# Abin Binoy — Full-Stack Web Developer Portfolio
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+# Sitemaps
+Sitemap: https://abinbinoy-about.vercel.app/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
