@@ -1,0 +1,78 @@
+{
+  "languages": {
+    "code": "es",
+    "es": "Malayalam",
+    "en": "English"
+},
+  "meta": {
+    "title": "Full-Stack Web Developer",
+    "description": "Abin Binoy is a Full-Stack Web Developer from Kerala, India. Explore Abin Binoy's portfolio — React, Vue.js, Next.js projects. About Abin — developer, gamer, creator."
+  },
+  "aria": {
+    "awwwardsLink": "Go to the Skizophonic candidature on Awwwards",
+    "skizophonicLink": "Go to the Skizophonic website",
+    "timelineLink": "See more about this timeline point"
+  },
+  "preloader": {
+    "loading": "loading"
+  },
+  "yo": {
+    "title": "Full-Stack Developer<br> who loves to create cool stuff.",
+    "text1": "I’m Abin Binoy, a Full‑Stack Developer based in Kerala, India, currently pursuing BCA.",
+    "text2": "Knowledge and supervision of the usability, accessibility, aesthetic, interactivity and communication in the design process.",
+    "text3": "An avid gamer who enjoys exploring new gaming experiences and tech innovations.",
+    "text4": "Started from {0} platform and hosted my first website mockup {1}.",
+    "timeline": {
+      "13": {
+        "text": "When I was 14 I got my",
+        "linkText": "first mobile phone"
+      },
+      "16": {
+        "text": "When I was 15 I started playing",
+        "linkText": "PUBG"
+      },
+      "18": {
+        "text": "When I was 18 I bought my",
+        "linkText": "First Laptop"
+      },
+      "21": {
+        "text": "After several months, started to develop websites and apps using white code",
+        "linkText": ""
+      },
+      "23": {
+        "text": "My first website",
+        "linkText": "BROHUHA-searchengine"
+      },
+      "27": {
+        "text": "When I was 19 I uploaded my first portfolio",
+        "linkText": "A B"
+      },
+      "33": {
+        "text": "currently developing a college app using react native",
+        "linkText": "",
+        "text2": "and moving on!"
+      }
+    }
+  },
+  "projects": {
+    "title": "Developed with"
+  },
+  "skills": {
+    "title": "Worked with",
+    "list": {
+      "coffee": "Coffee"
+    }
+  },
+  "footer": {
+    "social": "Say hi",
+    "text": "A is the spark, B the balance—first steps in the tech journey. From A to Z we travel, learning code, debugging, experimenting, and building. Yet beyond Z lies infinity, where innovation never ends. Each letter is progress, each milestone growth. Technology’s alphabet expands endlessly, fueling curiosity and creation.",
+    "linkText": "https://en.wikipedia.org/wiki/Web_development",
+    "code": "Code on Github",
+    "ingredients": "Made with"
+  },
+  "404": {
+    "title": "404 · Page not found",
+    "text": "Oops! The page you are looking for does not exist and it's getting dark",
+    "linkText": "Go back home"
+  }
+}

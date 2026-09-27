@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Round — Dark Glassmorphic Approach</title>
+  <style>
+    :root{
+      --bg:#071021;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.02);
+      --accent1: #7de3ff;
+      --accent2: #9b7dff;
+      --size: min(55vmin,720px);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;}
+    body{
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(125,227,255,0.05), transparent 10%),
+                  radial-gradient(900px 500px at 90% 90%, rgba(155,125,255,0.04), transparent 8%),
+                  var(--bg);
+      display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,Arial;overflow:hidden;color:#eaf6ff;
+    }
+
+    /* container */
+    .wrap{display:grid;place-items:center;gap:18px;text-align:center}
+
+    /* small heading above */
+    h1{font-size:20px;font-weight:700;letter-spacing:2px;margin-bottom:6px;opacity:0.9}
+
+    /* glass circle */
+    .stage{
+      width:var(--size);height:var(--size);border-radius:50%;position:relative;display:grid;place-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 12px 60px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(12px) saturate(130%);
+      overflow:visible;
+      transform: translateZ(0);
+    }
+
+    /* subtle rotating gradient layer */
+    .rotator{
+      position:absolute;inset:-20%;border-radius:50%;filter:blur(40px) saturate(140%);opacity:0.75;mix-blend-mode:screen;
+      background: conic-gradient(from 120deg, var(--accent1), var(--accent2), rgba(255,255,255,0.02));
+      animation: spin 10s linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+    /* number */
+    .number{
+      font-weight:900;font-size: calc(var(--size) * 0.28);line-height:1;color:transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.06); /* thin outline */
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.85));
+      -webkit-background-clip: text;background-clip:text;
+      transition: transform .45s cubic-bezier(.2,.9,.2,1);
+      z-index:4;
+    }
+
+    /* pulse ring for active beat */
+    .pulse{
+      position:absolute;inset:14%;border-radius:50%;z-index:2;pointer-events:none;
+      border: 2px solid rgba(125,227,255,0.08);
+      box-shadow: 0 0 40px rgba(125,227,255,0.06);
+      transform:scale(1);transition:transform .18s ease-out,opacity .25s ease;
+    }
+
+    
+      50%{transform: translate(-50%,-50%) scaleY(2.2) rotate(var(--rot)) translateY(calc(var(--size)/-2 + 28px));opacity:1}
+    }
+
+    /* small footer hint removed as requested */
+
+    /* responsive tweaks */
+    @media (max-width:520px){:root{--size:80vmin} .number{font-size:calc(var(--size)*0.32)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>ROUND</h1>
+
+    <div class="stage" id="stage" aria-live="polite">
+      <div class="rotator" aria-hidden="true"></div>
+      <div class="pulse" id="pulse" aria-hidden="true"></div>
+
+      
+
+      <div class="number" id="number">1</div>
+    </div>
+  </div>
+
+  <script>
+    const numberEl = document.getElementById('number');
+    const pulse = document.getElementById('pulse');
+    let current = 1;
+
+    function show(n){
+      // scale pop
+      numberEl.style.transform = 'scale(.92)';
+      setTimeout(()=> numberEl.style.transform = 'scale(1)', 120);
+
+      // flash pulse quickly
+      pulse.style.transform = 'scale(1)';
+      pulse.style.opacity = '1';
+      setTimeout(()=>{ pulse.style.transform = 'scale(1.18)'; pulse.style.opacity='0.06'; }, 80);
+
+      numberEl.textContent = n;
+    }
+
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){
+        current = current === 4 ? 1 : current + 1;
+        show(current);
+      } else if(e.key === 'Backspace' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        current = current === 1 ? 4 : current - 1;
+        show(current);
+      } else if(e.key === 'ArrowRight'){
+        current = current === 4 ? 1 : current + 1;
+        show(current);
+      }
+    });
+
+    // initial subtle pulse
+    setTimeout(()=> show(current), 300);
+  </script>
+</body>
+</html>

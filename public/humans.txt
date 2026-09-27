@@ -1,0 +1,12 @@
+/* TEAM */
+Developer: Abin Binoy
+Site: https://abinbinoy-about.vercel.app
+Contact: abinbinoy2000@gmail.com
+Github: https://github.com/BROHUHA
+LinkedIn: http://linkedin.com/in/abin-binoy-96119a37a
+Location: Kerala, India
+
+/* SITE */
+Last update: 2026/09/26
+Standards: HTML5, CSS3, JavaScript
+Software: Vue.js, Vite, GSAP, Tailwind CSS
